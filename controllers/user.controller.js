@@ -18,8 +18,7 @@ module.exports.addUser = async function(req, res) {
       });
   
       const savedUser = await newUser.save();
-  
-      res.status(201).send({ message: 'User created successfully!', userId: savedUser._id });
+      res.status(201).send({ message: 'User created successfully!', user: savedUser });
     } catch (error) {
       console.error(error);
       res.status(500).send('Error creating user');
