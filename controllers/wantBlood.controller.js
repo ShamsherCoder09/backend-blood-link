@@ -4,7 +4,6 @@ module.exports.getOrganizations = async function(req,res){
     const {city,state} = req.body;
     const organizations = await User.find({
         city: city,
-        state: state,
         role: 'Organization',
     })
     if(organizations.length > 0){
