@@ -29,3 +29,17 @@ module.exports.updateAvailable = async function(req, res) {
         res.status(500).send('Error updating availability');
     }
 }
+module.exports.getAvailableBlood = async function(req, res) {
+    try {
+        const organizationName = req?.body?.data;
+        const availability = await availableBlood.findOne({ organizationName });
+
+        if (!availability) {
+            return res.status(404).json({ message: 'Availability data not found for the organization' });
+        }
+        res.status(200).json({ message: 'Availability data fetched successfully', data: availability });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error fetching availability data');
+    }
+}
