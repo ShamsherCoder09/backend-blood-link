@@ -11,5 +11,5 @@ const formSchema = new Schema({
 
 });
 
-const formModel = model(BloodNeederForm,formSchema);
+const formModel = model('BloodNeederForm',formSchema);
 module.exports = formModel;
