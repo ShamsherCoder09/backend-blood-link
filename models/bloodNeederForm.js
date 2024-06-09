@@ -1,7 +1,7 @@
 const {Schema,model} = require('mongoose')
 
 const formSchema = new Schema({
-    organization: {
+    organizationId: {
         type: Schema.Types.ObjectId,
     },
     donerDetails:{
